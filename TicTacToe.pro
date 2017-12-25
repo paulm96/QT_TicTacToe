@@ -13,8 +13,21 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        settingwindow.cpp
+        settingwindow.cpp \
+    tictactoe.cpp \
+    Components/GameBoard.cpp \
+    Players/Computer.cpp \
+    Players/Player.cpp \
+    Game.cpp
 
-HEADERS  += settingwindow.h
+HEADERS  += settingwindow.h \
+    tictactoe.h \
+    Components/Figure.h \
+    Components/GameBoard.h \
+    Components/Result.h \
+    Players/Computer.h \
+    Players/Player.h \
+    Game.h
 
-FORMS    += settingwindow.ui
+FORMS    += settingwindow.ui \
+    tictactoe.ui
