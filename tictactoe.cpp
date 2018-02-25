@@ -33,8 +33,6 @@ TicTacToe::TicTacToe(QWidget *parent, int board_size, Figure _currentPlayer, int
     } else {
         isPlayerMove = true;
     }
-
-   // connect(this, SIGNAL(sig()), this, SLOT(test()));
 }
 
 TicTacToe::~TicTacToe() {
@@ -90,8 +88,6 @@ void TicTacToe::button_clicked(){
 
         isPlayerMove = false;
 
-        //emit sig();
-
     }
 
         ui->textEdit->append("Computer is thinking...");
@@ -118,7 +114,3 @@ void TicTacToe::result(int winningNumber, Figure figure){
         return;
     }
 }
-
-//void TicTacToe::test(){
-
-//}

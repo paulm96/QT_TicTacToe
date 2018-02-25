@@ -23,7 +23,6 @@ public:
     void result(int winningNumber, Figure figure);
 
 signals:
-   // void sig();
 
 
 private:
