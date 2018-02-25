@@ -5,7 +5,8 @@
 #include <iostream>
 #include "Computer.h"
 
-void Computer::move(GameBoard *board, int winningNumber) {
+std::pair<int,int> Computer::move(GameBoard *board, int winningNumber) {
+    std::pair<int,int> coordinates;
     std::cout << "\nZaczekaj na ruch przeciwnika...\n";
     double pre = -100, x;
     int moveX, moveY;  //startowa wartosc pre, moveX moveY do zapamietania wspolrzednych ruchu
@@ -26,6 +27,9 @@ void Computer::move(GameBoard *board, int winningNumber) {
             }
     std::cout << pre;
     (board->getBoard())[moveX][moveY] = figure;    //wykonaj ruch
+    coordinates.first = moveX;
+    coordinates.second = moveY;
+    return coordinates;
 }
 
 Computer::Computer(Figure figure) : figure(figure) {}

@@ -11,7 +11,7 @@
 
 class Computer {
 public:
-    void move(GameBoard *board, int winningNumber);
+    std::pair<int,int> move(GameBoard *board, int winningNumber);
     explicit Computer(Figure figure);
     double MinMax(Figure _figure, GameBoard *board, int winningNumber);
     double alfaBeta(Figure _figure, GameBoard *board, int winningNumber, double alfa, double beta, double level);

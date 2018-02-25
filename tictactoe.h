@@ -18,6 +18,13 @@ public:
     explicit TicTacToe(QWidget *parent, int board_size, Figure _currentPlayer, int winningNumber, Player * player,
                        Computer *computer, bool status = true);
     ~TicTacToe();
+    void updateUI();
+
+    void result(int winningNumber, Figure figure);
+
+signals:
+   // void sig();
+
 
 private:
     Ui::TicTacToe *ui;
@@ -25,14 +32,19 @@ private:
     Player *player;
     Computer *computer;
     Game *game;
-    QPushButton *button;
-    QVector<QPushButton *> board;
 
-    void gameprocess();
+    std::pair<int,int> coordinates;
+
+    QVector<QPushButton *> board;
+    int board_size;
+    int winningNumber;
+    bool isPlayerMove;
+    bool status;
 
 private slots:
-    void clicked();
+    void end_of_game_clicked();
     void button_clicked();
+    void test();
 };
 
 #endif // TICTACTOE_H

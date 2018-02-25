@@ -9,6 +9,7 @@ settingWindow::settingWindow(QWidget *parent) :
     player->setFigure((Figure) 0);
     computer = new Computer;
     computer->setFigure((Figure) 1);
+    currentPlayer = (Figure) 0;
 
     ui->setupUi(this);
 
@@ -36,7 +37,11 @@ void settingWindow::spinBox_win_choosen(int _winningNumber){
 }
 
 void settingWindow::start_pressed(){
+    //tutaj zrobic wszystkie parametry w stylu: board_size = ui->button->text();
     qDebug() << "start_pressed";
+    if(tictactoe)
+        delete tictactoe;
+
     this->hide();
     tictactoe = new TicTacToe(this, board_size, currentPlayer, winningNumber, player, computer);
     tictactoe->show();
